@@ -1,0 +1,1 @@
+console.log(restaurant.openingHours?.friday?.open);
