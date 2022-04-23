@@ -1,11 +1,18 @@
 
 function runProgram(input) { 
 
+    let N = +input;
+    console.log(fibo(N));
+    
 
+}
+function fibo(N){
+    if(N == 1 || N == 0) return N;
+    return fibo(N-1)+fibo(N-2);
 }
 
   if (process.env.USER === "aman") {
-    runProgram(``);
+    runProgram(`46`);
   } else {
     process.stdin.resume();
     process.stdin.setEncoding("ascii");

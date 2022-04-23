@@ -1,12 +1,14 @@
 let sudoku = [];
 function runProgram(input) { 
     input = input.trim().split('\n');
+    conso
     //console.log(input);
     
     let line = 0;
     for ( let i = 0; i < input.length; i++){
       let x = input[line++].trim().split(' ').map(Number);
       sudoku.push(x);
+     
     }
 
    // console.log(sudoku);
@@ -18,20 +20,28 @@ function runProgram(input) {
 }
 
 function possibleSudoku(i,j){
-  console.log(i,j);
+
   if(i == sudoku.length && j == sudoku[0].length) {
     console.log(sudoku);
-    return }
+    return
+   }
   
    
   if(i == sudoku.length) {
     j = j + 1;
     i = 0;
   }
-  else if(sudoku[i][j] !== 0) i = i + 1 ;
+  else if(sudoku[i][j] !== 0) {
+    console.log(i,j);
+    if ( i === sudoku.length - 1) {}
+    else i = i + 1 
+    if ( j === sudoku[0].length - 1) {}
+    else j = j + 1
+  }
 
   for ( let k = 1; k < 10;k++){
     sudoku[i][j] = k;
+
    // console.log(validator(i,j,k))
    if(validator(i,j,k)) possibleSudoku(i+1,j);
   }
