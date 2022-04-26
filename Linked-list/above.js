@@ -9,15 +9,14 @@ class Node {
     }
     
 }
+
+
+
+
 class LinkList{
     constructor(){
        this.head = null;
     }
-
-    append(data){
-        const node = new Node(data,this.head);
-        this.head = node;
-   }
 
    size(){
       let temp = this.head;
@@ -34,10 +33,53 @@ class LinkList{
    }
 
    print(){
-       l
+
+    let temp = this.head
+    while(temp != null){
+        let current = temp;
+        console.log(current.data);
+         temp = current.next;
+        }
+       
    }
 
+   append(data){
+       console.log(data);
+       let temp = this.head;
+       if(this.head === null){
+           this.head = new Node(data);
+       }
+
+       else {
+       while( temp.next != null){
+            temp = temp.next;
+       }
+       console.log(temp.next);
+      temp.next = new Node(data);
     }
+
+
+    
+
+    }
+    lastIndexValue(){
+        let temp = this.head;
+        while( temp.next != null){
+            temp = temp.next;
+       }
+console.log(temp.next)
+       return temp.data;
+
+    }
+
+    insertAtIndex(data,index){
+
+    }
+
+   
+       
+   }
+  
 
 
 
@@ -46,13 +88,17 @@ class LinkList{
 
 
 const linklist = new LinkList();
-
-linklist.append(1);
+console.log(linklist)
 linklist.append(2);
 linklist.append(3);
-linklist.append(4);
 
-console.log(linklist.size())
+
+// linklist.append(1);
+
+
+
+
+console.log(linklist)
 
 
 

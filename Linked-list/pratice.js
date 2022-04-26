@@ -1,27 +1,47 @@
-const LinkedListNode = class {
-
-    constructor(nodeData) {
-        this.data = nodeData;
-        this.next = null;
-    }
-};
-
-function append(head){
- 
-
+class Node {
+  constructor (data){
+       this.data = data,
+       this.next = null
+  }
 }
 
-// Complete the function below
 
-// function insertNodeAtHead(head, data) {
-//      let newNode = new LinkedListNode(data);
-//     newNode.next = head;
-//     return newNode
+class Linklist {
+    constructor (){
+        this.head = null;
+    }
 
-// }
+    appendStart(data){
+
+        const node = new Node(data);
+         node.next = this.head;
+        this.head = node;
 
 
-let node1 = new LinkedListNode(3);
-let node2 = new LinkedListNode(2);
-node2.next = node1;
-console.log(node2);
+
+    }
+}
+
+
+
+class LinkList {
+    constructor(){
+        this.head = null
+    }
+
+    appendStart(data){
+        const node = new Node(data)
+        node.next = this.head
+        this.head = node
+    }
+}
+
+const linklist = new Linklist();
+linklist.appendStart(3);
+linklist.appendStart(4);
+console.log(linklist)
+
+
+const linklist1 = new Linklist()
+linklist.appendStart(5)
+
